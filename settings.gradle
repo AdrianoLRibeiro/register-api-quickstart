@@ -1,0 +1,6 @@
+rootProject.name = 'register-api'
+
+include 'repository'
+include 'application'
+include 'usecases'
+include 'web'
