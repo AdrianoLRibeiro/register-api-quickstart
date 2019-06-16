@@ -14,10 +14,10 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2
 
 @Configuration
 @EnableSwagger2
-open class SwaggerConfig : WebMvcConfigurationSupport() {
+class SwaggerConfig : WebMvcConfigurationSupport() {
 
     @Bean
-    open fun greetingApi(): Docket {
+    fun greetingApi(): Docket {
         return Docket(DocumentationType.SWAGGER_2)
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.register"))

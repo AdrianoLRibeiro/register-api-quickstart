@@ -2,17 +2,17 @@ version: '3'
 volumes:
   user-data:
 services:
-  db_payments:
+  db_register:
     image: mysql:8.0
     restart: always
 
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: payments_db
-      MYSQL_USER: payments_user
-      MYSQL_PASSWORD: payments_pwd
+      MYSQL_DATABASE: register_db
+      MYSQL_USER: register_user
+      MYSQL_PASSWORD: register_pwd
     ports:
-      - "3308:3306"
+      - "3309:3306"
 #
 #  app:
 #    image: openjdk:8
@@ -25,6 +25,6 @@ services:
 #    - "8080"
 #    command:  java -jar register-api-application-1.0.0-REALEASE.jar
 #    depends_on:
-#    - db_payments
+#    - db_register
 #    ports:
 #    - "8080:8080"
