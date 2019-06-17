@@ -31,7 +31,12 @@ subprojects {
             javaParameters = true
         }
     }
-    
+
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+
     dependencies {
 
         implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
@@ -46,8 +51,20 @@ subprojects {
         testRuntime group: "org.junit.jupiter", name: "junit-jupiter-engine", version: "5.3.2"
         testCompile group: "org.assertj", name: "assertj-core", version: "3.12.2"
         testCompile group: "com.nhaarman.mockitokotlin2", name: "mockito-kotlin", version: "2.1.0"
-//        testCompile group: "com.h2database", name: "h2", version: "1.4.199"
+        testCompile group: "com.h2database", name: "h2", version: "1.4.199"
         testCompile group: "io.github.benas", name: "random-beans", version: "3.8.0"
 
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+
+    compileKotlin {
+        kotlinOptions.allWarningsAsErrors = true
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
     }
 }
